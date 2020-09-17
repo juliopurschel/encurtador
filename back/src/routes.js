@@ -17,5 +17,7 @@ routes.delete('/users/:id', UserController.destroy );
 routes.get('/urls', UrlController.index ); 
 routes.get('/urls/:id', UrlController.show ); 
 routes.post('/urls', UrlController.store ); 
+routes.put('/urls/:id', UrlController.update ); 
+routes.delete('/urls/:id', UrlController.destroy ); 
 
 module.exports = routes;
