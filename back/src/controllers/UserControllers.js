@@ -9,7 +9,8 @@ module.exports = {
         return res.json(users)
     },
     async show(req, res){
-        const user = await User.findById(req.params.id);
+       
+        const user = await User.findOne({login: req.params.login});
 
         return res.json(user);
     },
