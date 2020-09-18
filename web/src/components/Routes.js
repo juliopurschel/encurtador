@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import Home from '../pages/home/Home'
+import Historic from '../pages/historic/Historic'
 
 import PrivateRoute from './PrivateRoute'
 
@@ -22,6 +23,7 @@ const Routes = () => (
             <Route component={Login} exact path="/" />
             <Route component={Register} exact path="/register" />
             <PrivateRoute component={Home} exact path="/home" />
+            <PrivateRoute component={Historic} exact path="/historic" />
             <Route component={NoMatch} />
         </Switch>
     </BrowserRouter>

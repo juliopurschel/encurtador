@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -8,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     login: {
         type: String,
         required: true,
-        unique: true
+        index: {unique: true},
     },
     pass: {
         type: String,
@@ -19,5 +20,7 @@ const UserSchema = new mongoose.Schema({
         default: Date.now,
     }    
 });
+
+
 
 mongoose.model('User', UserSchema);

@@ -13,19 +13,29 @@ const Register = () => {
 
     const handleSubmit = values => {
 
-        Api.post(`/users/`, {
-            name: values.name,
-            login: values.login,
-            pass: values.password
-        }).then(function (response) {
-            const { data } = response
-            localStorage.setItem('app-token', data._id)
-            history.push('/home')
-            history.go()
-        })
-            .catch(function (error) {
-                console.log(error);
+        Api.get(`/users/${values.login}`).then(resp => {
+            const { data } = resp;
+            if (data) {
+              return alert("Usuário já existe");
+            } else 
+            Api.post(`/users/`, {
+                name: values.name,
+                login: values.login,
+                pass: values.password
+            }).then(function (response) {
+                const { data } = response
+                localStorage.setItem('app-token', data._id)
+                history.push('/home')
+                alert("cadastro feito com sucesso")
+                history.go()
+            }).catch(function (error) {
+                console.log(error)
             });
+        });
+
+
+
+     
 
     }
     const validations = yup.object().shape({

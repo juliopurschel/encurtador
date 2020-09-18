@@ -9,7 +9,7 @@ module.exports = {
         return res.json(urls)
     },
     async show(req, res) {
-        const url = await Url.findById(req.params.id);
+        const url = await Url.find({user: req.params.user});
 
         return res.json(url);
     },
