@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Api from '../../api';
+import Moment from 'moment';
+
+import './historic.css'
+
 
 const userID = localStorage.getItem('app-token')
 
@@ -8,33 +12,50 @@ export default class Historic extends Component {
         urls: [],
     };
 
-    loadProducts = async () => {
+    loadurls = async () => {
         const response = await Api.get(`/urls/${userID}`);
-         this.setState({urls: response.data});
+        this.setState({ urls: response.data });
 
     };
 
     async componentDidMount() {
-        this.loadProducts();
-        
+        this.loadurls();
+
     }
     render() {
         const { urls } = this.state;
-        console.log(this.state)
+        urls.reverse();
+
         return (
-            <div className="product-list">
-            {urls.map(product => (
-               <article key={product._id}>
-                   <strong>{product.url}</strong>
-                   <p>{product.cutUrl}</p>
-                  
+            <>
+            
+            <div className="corpoh">
+            <h2> Histórico</h2>
+            <div className="table-wrapper">
+            
+                <table class="fl-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">URL</th>
+                            <th scope="col">Url Curta</th>
+                            <th scope="col">Data/hora</th>
+                        </tr>
+                    </thead>
 
-               </article>
-            ))}
-           
-        </div>
+                    {urls.map(url => (
+                        <tbody>
+                            <tr key={url._id}>
+                                <td>{url.url}</td>
+                                <td>{url.cutUrl}</td>
+                                <td> {Moment(url.createdAt).format("DD/MM/YYYY")} | {Moment(url.createdAt).format("HH:MM")} </td>
+                            </tr>
+                        </tbody>
 
-
+                    ))}
+                </table>
+            </div>
+</div>
+</>
         )
     }
 }

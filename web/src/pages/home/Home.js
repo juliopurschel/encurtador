@@ -4,7 +4,7 @@ import React from 'react'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 
 
-
+import { Link } from 'react-router-dom'
 import history from '../../history';
 
 import * as yup from 'yup';
@@ -30,60 +30,59 @@ const Login = () => {
 
         const response = await bitly.shorten(url.url)
 
-        console.log(response);
 
         if (response.id) {
-            alert(`Url Gerada: ${response.link}`)
+            document.querySelector(".cutURL").innerHTML = ` Seu Link: ${response.id}`;
             Api.post(`/urls/`, {
                 url: url.url,
                 cutUrl: response.id,
                 user: userID
-            }).then(function (response) {
-                history.push('/historic')
-                history.go()
-
             })
-
         } else {
             alert('Erro inesperado, tente novamente')
         }
 
-
-
     }
 
     const validations = yup.object().shape({
-        url: yup.string().required(),
+        url: yup.string().required('É necessária uma URL'),
 
     })
     return (
 
 
         <>
+            <div className="corpo">
+                
+               
+                
+                <Formik
+                    initialValues={{ url: '' }}
+                    onSubmit={example}
+                    validationSchema={validations}
+                >
+                    <Form className="url">
+                    <h2>Encurtador</h2>
+                     <p className="cutURL"></p>
+                        <div className="comment">Insira aqui o link que deseja encurtar</div>
+                        
+                        <div className="Form-Group">
+                            <Field
+                                name="url"
+                                className="url-Field"
+                            />
+                            <ErrorMessage
+                                component="span"
+                                name="url"
+                                className="url-Error"
+                            />
+                        </div>
+                        <button className="url-Btn" type="submit">gerar</button>    
+                        <p className="message"> <Link className="Reg-Btn" to="/historic" > Histórico </Link></p>
 
-            <p>Utilize a URL que deseja encurtar</p>
-            <Formik
-                initialValues={{ url: '' }}
-                onSubmit={example}
-                validationSchema={validations}
-            >
-                <Form className="Login">
-                    <div className="Form-Group">
-                        <Field
-                            name="url"
-                            className="Url-Field"
-                        />
-                        <ErrorMessage
-                            component="span"
-                            name="login"
-                            className="Url-Error"
-                        />
-                    </div>
-                    <button className="Url-Btn" type="submit">gerar</button>
-
-                </Form>
-            </Formik>
-
+                    </Form>
+                </Formik>
+            </div>
 
 
 
