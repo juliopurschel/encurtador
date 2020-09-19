@@ -1,10 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 
-.corpoh h2 {
-    text-align: center;
-    margin-top: 4rem;
-}
+
 
 /* Table Styles */
 
@@ -66,8 +63,36 @@
 
 .fl-table tbody tr td {
     color:#7159c1;
+}
+
+.top{
+    margin: 3rem auto 2rem -14.6em;    
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 197.35%;
+
+}
+.top-{
+   margin: 10rem 0px 0px 0px;
+}
+  .top  a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
     
-   
+  }
+  .top  a:hover {
+    opacity: 0.6;
+  }
+  
+  .top > img {
+    height: 1.6rem;
+  }
+  
+  .logout {
+    width: 3%;
+    
+  
 }
 
 

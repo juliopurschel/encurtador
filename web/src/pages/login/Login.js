@@ -10,7 +10,6 @@ import Api from '../../api';
 import history from '../../history';
 
 
-
 const Login = () => {
 
 
@@ -38,51 +37,47 @@ const Login = () => {
         password: yup.string().min(6).required('A senha deve conter no mínimo 6 caracteres')
     })
     return (
-        <div>        
-        
+        <div>
             <div className="corpo">
-            <Formik
-                initialValues={{ login: '', password: '' }}
-                onSubmit={handleSubmit}
-                validationSchema={validations}
-            >
+                <Formik
+                    initialValues={{ login: '', password: '' }}
+                    onSubmit={handleSubmit}
+                    validationSchema={validations}
+                >
 
-                <Form className="Login">
-                    <h2> Login</h2>
-                    <div className="Form-Group">
-                        <label>Usuário:</label>
-                        <Field
-                            name="login"
-                            className="Login-Field"
-                        />
-                        <ErrorMessage
-                            component="span"
-                            name="login"
-                            className="Login-Error"
-                        />
-                    </div>
-                    <div className="Form-Group">
-                        <label> Senha:</label>
-                        <Field
-                            name="password"
-                            className="Login-Field"
-                            type="password"
-                        />
-                        <ErrorMessage
-                            component="span"
-                            name="password"
-                            className="Login-Error"
-                        />
-                    </div>
-                    <button className="Login-Btn" type="submit">Entrar</button>
-                    <p className="message">Ainda não tem registro?  <Link className="Reg-Btn" to="/register" > Criar conta </Link></p>
+                    <Form className="Login">
+                        <h2> Login</h2>
+                        <div className="Form-Group">
+                            <label>Usuário:</label>
+                            <Field
+                                name="login"
+                                className="Login-Field"
+                            />
+                            <ErrorMessage
+                                component="span"
+                                name="login"
+                                className="Login-Error"
+                            />
+                        </div>
+                        <div className="Form-Group">
+                            <label> Senha:</label>
+                            <Field
+                                name="password"
+                                className="Login-Field"
+                                type="password"
+                            />
+                            <ErrorMessage
+                                component="span"
+                                name="password"
+                                className="Login-Error"
+                            />
+                        </div>
+                        <button className="Login-Btn" type="submit">Entrar</button>
+                        <p className="message">Ainda não tem registro?  <Link className="Reg-Btn" to="/register" > Criar conta </Link></p>
 
-
-
-                </Form>
-            </Formik>
-
-        </div>
+                    </Form>
+                </Formik>
+            </div>
         </div>
     )
 }

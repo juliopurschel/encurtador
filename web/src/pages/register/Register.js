@@ -23,7 +23,7 @@ const Register = () => {
                     login: values.login,
                     pass: values.password
                 }).then(function (response) {
-                    const { data } = response
+                    
                     history.push('/')
                     alert("cadastro feito com sucesso")
                     history.go()
@@ -31,11 +31,6 @@ const Register = () => {
                     console.log(error)
                 });
         });
-
-
-
-
-
     }
     const validations = yup.object().shape({
         name: yup.string().required('Nome obrigatório'),
@@ -44,7 +39,6 @@ const Register = () => {
     })
     return (
         <>
-
             <div className="corpo">
                 <Formik
                     initialValues={{ name: '', login: '', password: '' }}
@@ -95,12 +89,6 @@ const Register = () => {
             </div>
         </>
     )
-
-
-
-
-
-
 }
 
 export default Register;

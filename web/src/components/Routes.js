@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Switch } from 'react-router'
+import { Switch } from 'react-router'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -11,7 +11,7 @@ import Historic from '../pages/historic/Historic'
 import PrivateRoute from './PrivateRoute'
 
 import history from '../history'
-import NotFound from './NotFound';
+
 
 const NoMatch = ({ location }) => (
     <h3>Página <code>{location.pathname}</code> Não Encontrada</h3>
