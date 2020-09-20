@@ -17,15 +17,15 @@ O projeto foi desenvolvido utilizando as tecnologias:
     <td colspan="2">Desktop</td>
  </tr>
   <tr>
-    <td><img src="./readmeimg/login.png" width=300 /></td>
-    <td><img src="./readmeimg/home.png" width=300 /></td>
-    <td><img src="./readmeimg/historic.png" width=300 /></td>
+    <td><img src="./readmeimg/login.png" width=400 /></td>
+    <td><img src="./readmeimg/home.png" width=400 /></td>
+    <td><img src="./readmeimg/historic.png" width=400 /></td>
   </tr>
 </table>
 
 ## Instalando e iniciando o MongoDB
 
-- Clique [aqui](https://www.mongodb.com/)para ir ao site do `MongoDB`
+- Clique [aqui](https://www.mongodb.com/) para ir ao site do `MongoDB`
 - Crie o local: `C:\data\db`
 - Inicie o `mongod` na pasta raiz:\Program Files\MongoDB\Server\4.4\bin
 - Tudo Pronto!
