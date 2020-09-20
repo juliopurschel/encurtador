@@ -17,9 +17,9 @@ O projeto foi desenvolvido utilizando as tecnologias:
     <td colspan="2">Desktop</td>
  </tr>
   <tr>
-    <td><img src="./readmeimg/login.png" width=300 /></td><td><img src="./readme/Formulário.png" width=300 /></td>
-    <td><img src="./readmeimg/home.png" width=300 /></td><td><img src="./readme/Formulário.png" width=300 /></td>
-    <td><img src="./readmeimg/historic.png" width=300 /></td><td><img src="./readme/Formulário.png" width=300 /></td>
+    <td><img src="./readmeimg/login.png" width=300 /></td>
+    <td><img src="./readmeimg/home.png" width=300 /></td>
+    <td><img src="./readmeimg/historic.png" width=300 /></td>
   </tr>
 </table>
 
