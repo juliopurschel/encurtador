@@ -73,7 +73,7 @@ const Login = () => {
                             />
                         </div>
                         <button className="Login-Btn" type="submit">Entrar</button>
-                        <p className="message">Ainda não tem registro?  <Link className="Reg-Btn" to="/register" > Criar conta </Link></p>
+                        <p className="message">Ainda não possui cadastro?  <Link className="Reg-Btn" to="/register" > Criar conta </Link></p>
 
                     </Form>
                 </Formik>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 import { ErrorMessage, Formik, Form, Field } from 'formik'
@@ -84,6 +85,7 @@ const Register = () => {
                             />
                         </div>
                         <button className="Register-Btn" type="submit">Cadastrar</button>
+                        <p className="message">Já possui cadastro?<Link className="Reg-Btn" to="/" > Login </Link></p>
                     </Form>
                 </Formik>
             </div>
